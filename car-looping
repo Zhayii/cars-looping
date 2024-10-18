@@ -1,0 +1,89 @@
+using System;
+
+namespace carloop
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int choice;
+            int MONEY, MONEY2;
+            int price = 20000000;
+            int price2 = 35000000;
+            int change, change2;
+            string again;
+
+            do
+            {
+                Console.WriteLine("\nWELCOME TO ABC CAR DEALERSHIP");
+                Console.WriteLine("Choose a car brand:");
+                Console.Write("\n1. Toyota \n2.Lamborghini");
+                Console.Write("\n\nEnter the number of your chosen car brand: ");
+                choice = Convert.ToInt32(Console.ReadLine());
+                switch (choice)
+                {
+                    case 1:
+                        Console.WriteLine("\n\t\t\tYou selected: Toyota");
+                        Console.WriteLine("\n\t\t\tPrice: 20,000,000");
+                        Console.Write("\t\t\tMONEY: ");
+                        MONEY = Convert.ToInt32(Console.ReadLine());
+                        if (MONEY >= 20000000)
+                        {
+                            Console.WriteLine("\n\t\t\tYOU AFFORD THE CAR!");
+                            change = MONEY - price;
+                            Console.WriteLine("\t\t\tYour Change: {0:n2}", change);
+                            Console.WriteLine("\t\t\tThank Youuu!");
+                            Console.ReadLine();
+                        }
+                        else
+                        {
+                            Console.WriteLine("\n\t\t\tNOT AFFORD THE CAR!");
+                            Console.Write("\n\t\t\tDo you want to chooce again? (yes/no): ");
+                            again = Convert.ToString(Console.ReadLine());
+                            if (again == "yes")
+                            {
+                                continue;
+                            }
+                            else
+                            {
+                                Console.WriteLine("\n\t\t\tTHANK YOU FOR VISITING TO OUR SHOP!");
+                                Console.ReadLine();
+                            }
+                        }
+                        break;
+
+                    case 2:
+                        Console.WriteLine("\n\t\t\tYou selected: Lamborghini");
+                        Console.WriteLine("\n\t\t\tPrice: 35,000,000");
+                        Console.Write("\t\t\tMONEY: ");
+                        MONEY2 = Convert.ToInt32(Console.ReadLine());
+                        if (MONEY2 >= price2)
+                        {
+                            Console.WriteLine("\n\t\t\tYOU AFFORD THE CAR!");
+                            change2 = MONEY2 - price2;
+                            Console.WriteLine("\t\t\tYour Change: {0:n2}", change2);
+                            Console.WriteLine("\t\t\tThank Youuu!!");
+                            Console.ReadLine();
+                        }
+                        else
+                        {
+                            Console.WriteLine("\n\t\t\tNOT AFFORD THE CAR!");
+                            Console.Write("\n\t\t\tDo you want to chooce again? (yes/no): ");
+                            again = Convert.ToString(Console.ReadLine());
+                            if (again == "yes")
+                            {
+                                continue;
+                            }
+                            else
+                            {
+                                Console.WriteLine("\n\t\t\tTHANK YOU FOR VISITING TO OUR SHOP!");
+                                Console.ReadLine();
+                            }
+                        }
+                        break;
+                }
+            }
+            while (true);
+        }
+    }
+}
